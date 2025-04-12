@@ -1,0 +1,20 @@
+.parent
+{
+    border: 2px solid black;
+    width: 50 px;
+    padding: 40px.50px;
+    background-color: aqua;
+}
+grand .parent
+{
+    border: 2px,solid green;
+    width: 155px;
+    padding: 50px;
+    background-color: lightcoral;
+    position: relative;
+}
+
+    
+}
+
+

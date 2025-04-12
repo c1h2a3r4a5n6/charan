@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+</style>
+</head>
+<body>
+    <div>
+        <h1 id="display-text">Message</h1>
+        <button onclick="displayMsg();">Click Here</button>
+        <button id="hello-btn">Click Here</button>
+        <button id="bye-btn">Click Here</button>
+    </div>
+
+<!-- Script Code -->
+<script>
+    let displayTag=document.getElementById('display-text');
+    //Inline Event Handler
+    function displayMsg()
+    {
+        displayTag.textContent='Hi';
+        displayTag.style.color="white";
+    }
+    
+
+    //By Using Event Properties
+    let helloBtn=document.getElementById('hello-btn');
+    helloBtn.onclick=function()
+    {
+        displayTag.textContent="Hello";
+        displayTag.style.color="Yellow";
+    }
+
+    //By Using addEventListener method
+    let byeBtn=document.getElementById('bye-btn');
+    byeBtn.addEventListener('click',function()
+    {
+        displayTag.textContent="charan";
+        displayTag.style.color="grey";
+    })
+</script>
+</body>
+</html>
+    
+</body>
+</html>

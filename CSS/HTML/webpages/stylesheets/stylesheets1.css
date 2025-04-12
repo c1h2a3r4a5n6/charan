@@ -1,0 +1,13 @@
+.box{
+    padding: 20px;
+    background-color: aqua;
+    width: 100px black;
+    border: 2px;
+    
+}
+.container{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    background-color: aqua;
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login with OTP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-box {
+      background-color: #fff;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    .login-box h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .label {
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #333;
+      display: block;
+    }
+    .input-group {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      background-color: #fafafa;
+    }
+    .input-group span {
+      margin-right: 8px;
+    }
+    .input-group input {
+      border: none;
+      outline: none;
+      flex: 1;
+      background: transparent;
+      font-size: 14px;
+    }
+    .btn {
+      background-color: #ffa500;
+      border: none;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .error {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+    .success {
+      color: green;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<!-- React + Babel CDN -->
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<!-- React JSX -->
+<script type="text/babel">
+  const { useState } = React;
+
+  function OTPLogin() {
+    const [mobileNumber, setMobileNumber] = useState("");
+    const [error, setError] = useState("");
+    const [otpSent, setOtpSent] = useState(false);
+
+    const sendOTP = () => {
+      if (!/^\d{10}$/.test(mobileNumber)) {
+        setError("Please enter a valid 10-digit mobile number.");
+        return;
+      }
+
+      setError("");
+      setOtpSent(true);
+      alert(`OTP sent to +91${mobileNumber}`);
+    };
+
+    return (
+      <div className="login-box">
+        <h2>Login</h2>
+        <label className="label">Mobile Number</label>
+        <div className="input-group">
+          <span>🇮🇳 +91</span>
+          <input
+            type="text"
+            placeholder="Enter mobile number"
+            maxLength="10"
+            value={mobileNumber}
+            onChange={(e) => setMobileNumber(e.target.value)}
+          />
+        </div>
+        {error && <div className="error">{error}</div>}
+        <button className="btn" onClick={sendOTP}>Request OTP</button>
+        {otpSent && <div className="success">OTP has been sent successfully!</div>}
+      </div>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<OTPLogin />);
+  
+  
+
+</script>
+</body>
+</html>
+
+<script>
+    import React, { useState } from "react";
+
+const OTPLogin = () => {
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [otpSent, setOtpSent] = useState(false);
+  const [error, setError] = useState("");
+
+  // Simulated OTP sender (replace this with real API call in production)
+  const sendOTP = () => {
+    if (!/^\d{10}$/.test(mobileNumber)) {
+      setError("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    setError("");
+    console.log("Sending OTP to: +91" + mobileNumber);
+    // Simulate sending OTP
+    setTimeout(() => {
+      setOtpSent(true);
+      alert(`OTP sent to +91${mobileNumber}`);
+    }, 1000);
+  };
+
+  return (
+    <div style={styles.container}>
+      <h2 style={styles.title}>Login</h2>
+
+      <label style={styles.label}>Mobile Number</label>
+
+      <div style={styles.inputContainer}>
+        <span style={styles.prefix}>🇮🇳 +91</span>
+        <input
+          type="text"
+          placeholder="Enter mobile number"
+          value={mobileNumber}
+          onChange={(e) => setMobileNumber(e.target.value)}
+          maxLength="10"
+          style={styles.input}
+        />
+      </div>
+
+      {error && <p style={styles.error}>{error}</p>}
+
+      <button style={styles.button} onClick={sendOTP}>
+        Request OTP
+      </button>
+
+      {otpSent && <p style={styles.success}>OTP has been sent successfully!</p>}
+    </div>
+  );
+};
+
+
+const styles = {
+  container: {
+    width: "300px",
+    margin: "100px auto",
+    padding: "20px",
+    border: "1px solid #ddd",
+    borderRadius: "10px",
+    fontFamily: "Arial, sans-serif",
+    textAlign: "center",
+    backgroundColor: "#fff",
+  },
+  title: {
+    marginBottom: "20px",
+  },
+  label: {
+    display: "block",
+    textAlign: "left",
+    fontSize: "14px",
+    marginBottom: "5px",
+    color: "#333",
+  },
+  inputContainer: {
+    display: "flex",
+    alignItems: "center",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
+    marginBottom: "10px",
+    padding: "5px",
+    backgroundColor: "#f9f9f9",
+  },
+  prefix: {
+    padding: "0 8px",
+    fontSize: "14px",
+  },
+  input: {
+    border: "none",
+    flex: 1,
+    outline: "none",
+    fontSize: "14px",
+    backgroundColor: "transparent",
+  },
+  button: {
+    backgroundColor: "#FFA500",
+    border: "none",
+    color: "white",
+    padding: "10px",
+    width: "100%",
+    fontSize: "14px",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+  error: {
+    color: "red",
+    fontSize: "12px",
+    marginBottom: "10px",
+  },
+  success: {
+    color: "green",
+    marginTop: "15px",
+    fontSize: "13px",
+  },
+};
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    
+

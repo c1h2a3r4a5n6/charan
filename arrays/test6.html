@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        birthyears=[2000,1999,1997,2001];
+        let ags=birthyears.map(function(year)
+        {
+            let currentyear=new Date().getFullYear();
+            let age=currentyear-year;
+            return age;
+        })
+
+
+        
+    </script>
+    
+</body>
+</html>

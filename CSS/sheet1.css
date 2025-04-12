@@ -1,0 +1,19 @@
+.card{
+    background-color: azure;
+    text-align: center;
+    font-style: italic;
+    font-size: 50px;
+    background-image: url("https://img.freepik.com/premium-photo/babar-azam-vs-kohli-t20-world-cup-2024-banner_915071-138850.jpg?w=900");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 70px;
+    font-weight: 30px;
+}
+.button{
+    background-color: blue;
+    height: 20px;
+    width: 60px;
+    border-radius: 30px;
+    color: orange;
+}

@@ -1,0 +1,11 @@
+.flex
+{
+    background-image: url("https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRcIVuUgkrDHXYcHei9RubcvgxOpy4_lqbwnNEKeyer2HIG9jVkznl6WbG-D8h7DPSjvyXkA9ki9tqCyWc");
+    background-color: red;
+    width:100vw ;
+    height: 100vw;
+    background-size: cover;
+    text-align: center;
+    
+
+}

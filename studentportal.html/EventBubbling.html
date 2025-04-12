@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <div class="parent">
+            <div id="child">   
+    
+                <button id="btn">click here</button>
+            </div>
+        </div>
+        <script>
+            let parent = document.querySelector(".parent");
+            let child = document.getElementById("child");
+            let btn = document.querySelector("#btn");
+    
+            parent.addEventListener("click", () => {
+                console.log("parent div is clicked");
+            });
+    
+            child.addEventListener("click", () => {
+                console.log("child div is clicked");
+            });
+    
+            btn.addEventListener("click", () => {
+                console.log("btn is clicked")
+            },{capture:true})
+        </script>
+    </body>
+    </html>
+    

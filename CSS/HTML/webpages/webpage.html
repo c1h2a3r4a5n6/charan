@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../webpages/stylesheets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <label for="mobile">Mobile Number</label>
+    
+        <div class="mobile-input">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" class="flag">
+            <span>+91</span>
+            <input type="text" id="mobile" placeholder="Enter mobile number" required>
+        </div>
+    
+        <p class="error" id="error-message">Invalid mobile number</p>
+        <button onclick="validateMobile()">Request OTP</button>
+    </div>
+    
+
+    <script>
+        function validateMobile() {
+            let mobile = document.getElementById("mobile").value;
+            let errorMessage = document.getElementById("error-message");
+    
+            if (/^\d{10}$/.test(mobile)) {
+                alert("OTP Sent Successfully!");
+                errorMessage.style.display = "none";
+            } else {
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
