@@ -21,7 +21,7 @@ displayQtyE1.textContent = qty;
 function incQty() {
     ++qty;
     displayQtyE1.textContent = qty;
-    console.log('increment')
+    console.log('incre')
 }
 function decQty() {
     if (qty > 1) {
